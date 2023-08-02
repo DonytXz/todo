@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import { TodoItem } from "./table/TodoItem";
+import Header from "./table/Header";
 
-const Table = () => {
+const Table = (props: any) => {
+  const lastPostIndex = props.currentPage * props.postsPerPage;
+  const firstPostIndex = lastPostIndex - props.postsPerPage;
+  const todos = props.todos;
+  const currentPosts = todos.slice(firstPostIndex, lastPostIndex);
   return (
-    <>Table</>
-  )
-}
+    <>
+      <div>
+        <Header />
+        {currentPosts.map((todo: any) => {
+          return <TodoItem postsPerPage={props.postsPerPage} todo={todo} />;
+        })}
+      </div>
+    </>
+  );
+};
 
-export default Table
+export default Table;

@@ -1,6 +1,6 @@
 const apiUrl:string = "https://jsonplaceholder.typicode.com";
 
-const getTodos = async () => {
+export const getTodos = async () => {
     try {
         const res = await fetch(
             `${apiUrl}/todos`,
