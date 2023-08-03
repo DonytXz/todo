@@ -57,6 +57,7 @@ const Todos = () => {
             ) : (
               <>
                 <AddTodo newTodos={newTodos} setNewTodos={setNewTodos} />
+              {/* <button onClick={} className="p-2 border-2">Fail Fetch</button> */}
                 <Pagination
                   currentPage={currentPage}
                   setCurrentPage={setCurrentPage}
