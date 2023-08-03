@@ -1,18 +1,36 @@
 import React from "react";
 import { TodoItem } from "./table/TodoItem";
 import Header from "./table/Header";
+import { Todo } from "@/lib/types/Todo";
 
 const Table = (props: any) => {
-  const lastPostIndex = props.currentPage * props.postsPerPage;
-  const firstPostIndex = lastPostIndex - props.postsPerPage;
-  const todos = props.todos;
-  const currentPosts = todos.slice(firstPostIndex, lastPostIndex);
+  const lastPostIndex: number = props.currentPage * props.postsPerPage;
+  const firstPostIndex: number = lastPostIndex - props.postsPerPage;
+  const todos: Array<Todo> = props.todos;
+  const currentPosts: Array<Todo> =
+    todos?.length > 0 ? todos?.slice(firstPostIndex, lastPostIndex) : [];
+  const newTodos: Array<Todo> = props.newTodos;
   return (
     <>
-      <div>
+      <div id="table">
         <Header />
-        {currentPosts.map((todo: any) => {
-          return <TodoItem postsPerPage={props.postsPerPage} todo={todo} />;
+        {newTodos?.map((todo: any, index: number) => {
+          return (
+            <TodoItem
+              key={index}
+              postsPerPage={props.postsPerPage}
+              todo={todo}
+            />
+          );
+        })}
+        {currentPosts?.map((todo: any, index: number) => {
+          return (
+            <TodoItem
+              key={index}
+              postsPerPage={props.postsPerPage}
+              todo={todo}
+            />
+          );
         })}
       </div>
     </>
