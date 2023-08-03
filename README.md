@@ -3,6 +3,7 @@ npm install
 ## Run app
 npm run dev
 ## To run offline(since next is server-side)
+- Disconnect from network
 node server.js
 ## App port
 http://localhost:3000/
