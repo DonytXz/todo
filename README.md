@@ -3,7 +3,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 ## npm install
-## npm run cypress to run the test
+## npm run cypress 
+to run the test
 
 First, run the development server:
 
